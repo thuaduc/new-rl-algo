@@ -1,0 +1,45 @@
+<mujoco>
+  <compiler angle="radian" />
+
+  <!-- Enable Gravity -->
+  <option gravity="0 0 -9.81" />
+
+  <worldbody>
+    <light name="top" pos="0 0 1" />
+
+    <!-- Ball positioned above the floor -->
+    <body pos="0 0 1">
+      <joint type="free" />
+      <geom name="sphere" type="sphere" size="0.1 0.1 0.1" rgba="0.5 0.5 0.5 1" />
+    </body>
+
+    <!-- Floor -->
+    <geom name="floor" type="plane" size="1 1 0.1" rgba="0.5 0.5 0.5 1" />
+
+    <!-- Back Wall -->
+    <body name="back_wall" pos="0 1 0.5">
+      <geom name="wall_back" type="box" size="1 0.05 0.5" rgba="1 0 0 1" />
+    </body>
+
+    <!-- Front Wall -->
+    <body name="front_wall" pos="0 -1 0.5">
+      <geom name="wall_front" type="box" size="1 0.05 0.5" rgba="1 1 0 1" />
+    </body>
+
+    <!-- Left Wall -->
+    <body name="left_wall" pos="-1.05 0 0.5">
+      <geom name="wall_left" type="box" size="0.05 1.05 0.5" rgba="0 1 0 1" />
+    </body>
+
+    <!-- Right Wall -->
+    <body name="right_wall" pos="1.05 0 0.5">
+      <geom name="wall_right" type="box" size="0.05 1.05 0.5" rgba="0 0 1 1" />
+    </body>
+
+    <!-- Ceiling (optional, can be uncommented if needed) -->
+    <!-- <body name="ceiling" pos="0 0 1">
+      <geom name="ceiling_geom" type="box" size="1 1 0.1" rgba="0.7 0.7 0.7 1"/>
+    </body> -->
+
+  </worldbody>
+</mujoco>
